@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require('express')
 
 const rotas = require('./rotas')
 
-const app = express();
+const app = express()
 
-app.use(express.json());
+app.use(express.json())
 
-app.use(rotas);
+app.use(rotas)
 
 
-app.listen(3000);
+app.listen(3000)

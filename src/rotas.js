@@ -1,4 +1,4 @@
-const express = require ('express');
+const express = require ('express')
 
 const {
     listarContas,
@@ -18,15 +18,15 @@ const {
     
 } = require('./controladores/transacoes')
 
-const rotas = express();
+const rotas = express()
 
 
-rotas.get('/contas',listarContas);
-rotas.post('/contas',criarConta);
-rotas.put('/contas/:numeroConta/usuario',atualizarContas);
-rotas.delete('/contas/:numeroConta',excluirContas);
-rotas.post('/transacoes/depositar',depositar);
-rotas.post('/transacoes/sacar',sacar);
+rotas.get('/contas',listarContas)
+rotas.post('/contas',criarConta)
+rotas.put('/contas/:numeroConta/usuario',atualizarContas)
+rotas.delete('/contas/:numeroConta',excluirContas)
+rotas.post('/transacoes/depositar',depositar)
+rotas.post('/transacoes/sacar',sacar)
 rotas.post('/transacoes/transferir',transferir)
 rotas.get('/contas/saldo',saldo)
 rotas.get('/contas/extrato',extrato)
