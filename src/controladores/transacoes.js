@@ -54,4 +54,47 @@ const sacar = (req, res) => {
   });
 
             return res.status(204).send();
-};
+}
+const transferir = (req, res) => {
+    const { numero_conta_origem, numero_conta_destino, valor, senha } = req.body;
+
+    const contaOrigem = contas.find((conta) => {
+            return conta.numero === Number(numero_conta_origem);
+  });
+    const contaDestino = contas.find((conta) => {
+            return conta.numero === Number(numero_conta_destino);
+  });
+
+        if (!contaOrigem || !contaDestino) {
+            return res.status(400).json({ mensagem: "Conta bancária não encontrada" });
+  }
+
+  
+        if (senha !== contaOrigem.usuario.senha) {
+            return res.status(400).json({ mensagem: "A senha do banco informada é inválida!" });
+  }
+
+        if (contaOrigem.saldo < valor) {
+            return res.status(400).json({ mensagem: "Saldo insuficiente!" });
+  }
+   
+
+
+    contaOrigem.saldo -= Number (valor);
+    contaDestino.saldo += Number (valor);
+
+    transferencias.push({
+        data: new Date().toLocaleString(),
+        numero_conta_origem: numero_conta_origem,
+        numero_conta_destino: numero_conta_destino,
+        valor,
+  })
+        return res.status(204).send()
+
+  }
+
+module.exports = {
+  depositar,
+  sacar,
+  transferir,
+}
