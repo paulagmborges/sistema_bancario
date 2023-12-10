@@ -1,4 +1,4 @@
-
+let { banco, contas , identificadorConta, depositos, saques, transferencias } = require('../bancodedados')
 
 const listarContas =  (req ,res) => {
  
