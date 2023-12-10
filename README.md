@@ -8,7 +8,7 @@
 🏦API REST Sistema bancário <br><br>
 Este projeto foi desenvolvido para o desafio do Módulo 2 do Curso Desenvolvimento de Software com foco em BackEnd pela Cubos Academy.<br><br>
 
-## :ladder: Fucionalidades do Projeto
+## :ladder: Funcionalidades do Projeto:
 
 - Criar Conta Bancária: Crie facilmente uma nova conta bancária.
 
